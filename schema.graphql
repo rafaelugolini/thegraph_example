@@ -1,0 +1,11 @@
+type Transaction @entity {
+  id: ID!
+  address: Balance!
+  amount: BigInt!
+}
+
+type Balance @entity {
+  id: ID!
+  amount: BigInt!
+  transactions: [Transaction!]! @derivedFrom(field: "address")
+}

@@ -1,0 +1,26 @@
+specVersion: 0.0.4
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: imUSD
+    network: mainnet
+    source:
+      address: "0x30647a72Dc82d7Fbb1123EA74716aB8A317Eac19"
+      abi: imUSD
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - AdminChanged
+        - Upgraded
+      abis:
+        - name: imUSD
+          file: ./abis/4626.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransferContract
+      file: ./src/im-usd.ts
