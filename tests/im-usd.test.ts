@@ -10,10 +10,10 @@ import {
 } from "matchstick-as/assembly/index";
 import { Transfer } from "../generated/imUSD/imUSD";
 import {
-  handleTransfer,
+  handleTransferContract,
+  handleTransferSave,
   CONTRACT_ADDRESS,
   NULL_ADDRESS,
-  handleTransferContract,
 } from "../src/im-usd";
 import { createNewTransferEvent } from "./utils";
 
@@ -32,12 +32,12 @@ const amount = BigInt.fromI32(1000);
 // If added in `beforeAll`, it will run issues.
 // ERROR AS100: Not implemented: Closures
 let event: Transfer;
-describe("handleTransfer()", () => {
+describe("handleTransferSave()", () => {
   beforeAll(() => {
     event = createNewTransferEvent(nullAddress, testWallets[0], amount);
-    handleTransfer(event);
+    handleTransferSave(event);
     event = createNewTransferEvent(testWallets[0], testWallets[1], amount);
-    handleTransfer(event);
+    handleTransferSave(event);
   });
 
   afterAll(() => {

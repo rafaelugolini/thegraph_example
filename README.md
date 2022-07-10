@@ -12,9 +12,9 @@ In [schema.graphql](./schema.graphql): there are 2 entities:
 
 ## Mappers
 
- There are 2 mappers for in [im-usd.ts](./src/im-usd.ts)
+ There are 2 mappers for in [im-usd.ts](./src/im-usd.ts) for the `Transfer` used in `handleTransfer(event: Transfer)`
 
-`handleTransfer(event: Transfer)`: this example logs every event happening.
+`handleTransferSave(event: Transfer)`: this example logs every event happening.
 
 `handleTransferContract(event: Transfer)`: this example logs every event happening but it gets the total balance from `balanceOf` from the contract and it ignores *mint/burn* transfers.
 

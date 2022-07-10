@@ -21,6 +21,4 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-        - event: Transfer(indexed address,indexed address,uint256)
-          handler: handleTransferContract
       file: ./src/im-usd.ts

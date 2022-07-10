@@ -39,7 +39,7 @@ const save = (hash: string, address: string, amount: BigInt): void => {
  * Use `save` to store the events
  * @param event Transfer event
  */
-export function handleTransfer(event: Transfer): void {
+export function handleTransferSave(event: Transfer): void {
   const hash = event.transaction.hash.toHexString();
   const from = event.params.from.toHexString();
   const to = event.params.to.toHexString();
@@ -104,4 +104,9 @@ export function handleTransferContract(event: Transfer): void {
     saveContract(hash, to, amount);
     saveContract(hash, from, amount.neg());
   }
+}
+
+export function handleTransfer(event: Transfer): void {
+  handleTransferSave(event);
+  handleTransferContract(event);
 }
