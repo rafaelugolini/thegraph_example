@@ -12,7 +12,7 @@ In [schema.graphql](./schema.graphql): there are 2 entities:
 
 ## Mappers
 
- There are 2 mappers for in [im-usd.ts](./src/im-usd.ts) for the `Transfer` used in `handleTransfer(event: Transfer)`
+ There are 2 mappers for in [im-usd.ts](./src/im-usd.ts) for the `Transfer` event:
 
 `handleTransferSave(event: Transfer)`: this example logs every event happening.
 

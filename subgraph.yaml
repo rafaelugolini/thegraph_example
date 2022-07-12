@@ -20,5 +20,6 @@ dataSources:
           file: ./abis/4626.json
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
-          handler: handleTransfer
+          # handler: handleTransferSave
+          handler: handleTransferContract
       file: ./src/im-usd.ts

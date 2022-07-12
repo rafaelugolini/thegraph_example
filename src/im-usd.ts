@@ -12,7 +12,6 @@ const createOrLoadBalance = (id: string): Balance => {
   if (balance == null) {
     const newBalance = new Balance(id);
     newBalance.amount = BigInt.fromI32(0);
-    newBalance.save();
     return newBalance;
   }
   return balance;
@@ -104,9 +103,4 @@ export function handleTransferContract(event: Transfer): void {
     saveContract(hash, to, amount);
     saveContract(hash, from, amount.neg());
   }
-}
-
-export function handleTransfer(event: Transfer): void {
-  handleTransferSave(event);
-  handleTransferContract(event);
 }
