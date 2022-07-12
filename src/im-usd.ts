@@ -1,4 +1,4 @@
-import { Address, BigInt, ethereum, log } from "@graphprotocol/graph-ts";
+import { Address, BigInt, log } from "@graphprotocol/graph-ts";
 import { imUSD, Transfer } from "../generated/imUSD/imUSD";
 import { Balance, Transaction } from "../generated/schema";
 
